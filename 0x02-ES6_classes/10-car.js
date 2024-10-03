@@ -1,29 +1,13 @@
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
-const _brand = Symbol('brand');
-const _motor = Symbol('motor');
-const _color = Symbol('color');
-
 export default class Car {
   constructor(brand, motor, color) {
-    this[_brand] = brand;
-    this[_motor] = motor;
-    this[_color] = color;
+    this._brand = brand; // Store brand in a private attribute
+    this._motor = motor; // Store motor in a private attribute
+    this._color = color; // Store color in a private attribute
   }
 
   cloneCar() {
-    return new this.constructor(this[_brand], this[_motor], this[_color]);
-  }
-
-  // Optional: Getters to access the properties if needed
-  get brand() {
-    return this[_brand];
-  }
-
-  get motor() {
-    return this[_motor];
-  }
-
-  get color() {
-    return this[_color];
+    return new this.constructor(this._brand, this._motor, this._color); // Create a new instance of the same class
   }
 }
