@@ -68,3 +68,19 @@ function executeWork(employee: Director | Teacher): void {
 // Example usage
 executeWork(createEmployee(200));
 executeWork(createEmployee(1000));
+
+// Define the string literal type Subjects
+type Subjects = 'Math' | 'History';
+
+// Function that takes a class subject and returns the appropriate message
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    } else if (todayClass === 'History') {
+        return 'Teaching History';
+    }
+}
+
+// Example usage
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
